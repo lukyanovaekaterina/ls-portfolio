@@ -1,0 +1,187 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Portfolio | main page
+  body
+    .wrapper
+      .welcome-section
+        section.hero
+          .container.hero__container
+            header.header.hero__header
+              .hero__logo
+                .logo ЛЕ
+              .hero__links 
+                nav.nav
+                  - var menu = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
+                  ul.nav__list
+                    each item in menu
+                      li.nav__item
+                        a(href="").nav__link #{item}
+              .hero__menu
+                - var icons = ['insta', 'vk', 'github']
+                ul.socials
+                  each item, index in icons
+                    li.socials__item(class=`${index === 1 ? 'active' : ''}`)
+                      a(href="").socials__link
+                        +icon(`${item}`, 'socials__icon')
+            .hero__content
+              .user-info
+                h1.user-info__desc Личный сайт вебразработчика
+                .user-info__username Лукьянова Екатерина
+            .hero__btns
+              .scroll-down-btns Скролл
+        section.about
+          .container.about__container
+            .about__left
+              .user
+                .avatar.user__avatar
+                  +image("content/user.jpg", "avatar__pic")
+                ul.user__desc
+                  - 
+                    var items = [
+                      ['Проживаю', 'Краснодар'],
+                      ['Возраст', '38'],
+                      ['Родилась', '9 февраля 1981'],
+                    ]
+                  each item in items
+                    li.user__desc-item
+                      .user__key #{item[0]}
+                      .user__value #{item[1]}
+            .about__right
+              h4.about__prolog Привет, меня зовут
+              h2.about__title Екатерина Лукьянова
+              .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+      section.values
+        .values__picture
+            +image("bg/Руки.png", "values__pic")
+        .container.values__container
+          .values__content
+            .values__title
+              h2.section-title.values__title-text Чем я могу быть вам полезен
+              .values__desc
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam earum cupiditate ut, soluta deleniti vel deserunt aliquid nisi nihil molestiae rerum nesciunt labore enim inventore ipsum, cum pariatur corporis.
+
+            ul.user-skills
+              
+              - 
+                var skills = [
+                  ['Frontend', ['HTML5', 'CSS3', 'Javascript', 'Jquery и Vue.js']],
+                  ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
+                ]
+              each item in skills 
+                li.user-skills__item.skills-row 
+                  h3.skills-row__title #{item[0]}
+                  ul.skills-row__list
+                    each skill in item[1]
+                      li.skills-row__item
+                        .skill
+                          svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
+                            circle(r="70" cx="100" cy="100").skill__circle.skill__circle--position--under
+                            //- circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
+                            linear-gradient()
+                          .skill__title #{skill}
+                    
+      section.works
+        .container.works__container
+          h2.section-title Мои работы
+          .works__content
+            .works__left
+              .slider
+                +image("bg/preview.png", "slider__fillpic")
+                .slider__preview
+                  ul.previews
+                    - for (var i = 0; i < 3; i++)
+                      li.previews__item
+                        img.previews__pic
+                .slider__buttons
+                  .slider-button
+                    button.slider-buttons__item.slider-buttons__item--slide--prev 
+                    button.slider-buttons__item.slider-buttons__item--slide--next
+
+            .works__right
+              .works__tags
+                - var tags = ['html', 'css', 'javascript']
+                ul.tags
+                  each tag in tags
+                    li.tags__item #{tag}
+              .works__text
+                h3.works__title Сайт школы образования
+                .works__desc-text
+                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                a.iconed-link
+                  .iconed-link__icon
+                  .iconed-link__text Посмотреть сайт
+     
+      .feedback-section
+        section.reviews
+          .container.reviews__container
+            h2.reviews-title Что обо мне говорят
+            .reviews__content
+              ul.reviews
+                  li.reviews__item
+                    p.reviews-message Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .reviews__persona
+                      img.reviews__foto(src="/src/images/content/Covalchuk.jpg", alt="")
+                      .reviews__name Дмитрий Ковальчук
+                  li.reviews__item
+                    p.reviews-message Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                    .reviews__persona
+                      img.reviews__foto(src="/src/images/content/Sabancev.jpg", alt="")
+                      .reviews__name Владимир Сабанцев 
+        section.form
+          .container.form__container
+            .form__title Связаться со мной
+            form.form__elem(action="", id="myForm")
+              .form__col
+                .form__row
+                  label.form__label(for="name")
+                    h3.form__label-title Введите ваше имя
+                    input.form__input(type="text" name="name" id="name")
+                  label.form__label(for="email")
+                    h3.form__label-title Введите ваш email
+                    input.form__input(type="text" name="email" id="email")
+                .form__row
+                  label.form__label(for="email")
+                    h3.form__label-title Сообщение к письму
+                    textarea.form__input.form__textarea(name="comment", id="comment")
+                .form__row
+                  button.btn__form(type="submit") Отправить
+          footer.footer
+            .footer__content
+              .footer__top
+               .footer__name Лукьянова Екатерина
+                nav.nav
+                  - var menu = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
+                  ul.nav__list
+                    each item in menu
+                      li.nav__item
+                        a(href="").nav__link #{item}
+              .footer__bottom
+                p.footer__desc Личный сайт вебразработчика
+                .footer__center
+                  p.footer__message Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                  .footer__menu
+                - var icons = ['insta', 'vk', 'github']
+                ul.socials
+                  each item, index in icons
+                    li.socials__item(class=`${index === 1 ? 'active' : ''}`)
+                      a(href="").socials__link
+                        +icon(`${item}`, 'socials__icon')
+                P.footer__presept Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+              
+
+
+
+
+      // +image('content/user.jpg', 'user-pic')
+      // +icon('link', 'link-class')
+      //  .icon-bg
+        
+
+      
