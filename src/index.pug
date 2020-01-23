@@ -31,8 +31,8 @@ html(lang="ru")
                         +icon(`${item}`, 'socials__icon')
             .hero__content
               .user-info
-                h1.user-info__desc Личный сайт вебразработчика
-                .user-info__username Лукьянова Екатерина
+                h1.user-info__desc Личный сайт <br/> вебразработчика
+                .user-info__username Лукьянова <br/> Екатерина
             .hero__btns
               .scroll-down-btns Скролл
         section.about
@@ -63,9 +63,9 @@ html(lang="ru")
         .container.values__container
           .values__content
             .values__title
-              h2.section-title.values__title-text Чем я могу быть вам полезен
+              h2.values__title-text Чем я могу быть вам полезен
               .values__desc
-                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam earum cupiditate ut, soluta deleniti vel deserunt aliquid nisi nihil molestiae rerum nesciunt labore enim inventore ipsum, cum pariatur corporis.
+                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
             ul.user-skills
               
@@ -83,9 +83,10 @@ html(lang="ru")
                         .skill
                           svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
                             circle(r="70" cx="100" cy="100").skill__circle.skill__circle--position--under
-                            //- circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
+                            //-circle(r="70" cx="100" cy="100" stroke-dasharray="85 15").skill__circle.skill__circle--position--above
                             linear-gradient()
-                          .skill__title #{skill}
+                            g.skill__title
+                              text(x="35%" y="50%" fill="#aaaaa9" dominant-baseline="central").skill__name #{skill}
                     
       section.works
         .container.works__container
@@ -155,28 +156,26 @@ html(lang="ru")
           footer.footer
             .footer__content
               .footer__top
-               .footer__name Лукьянова Екатерина
-                nav.nav
-                  - var menu = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
-                  ul.nav__list
-                    each item in menu
-                      li.nav__item
-                        a(href="").nav__link #{item}
+               .footer__name Лукьянова <br/> Екатерина
+               nav.nav
+                - var menu = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
+                ul.nav__list
+                  each item in menu
+                    li.nav__item
+                      a(href="").nav__link #{item}
               .footer__bottom
                 p.footer__desc Личный сайт вебразработчика
                 .footer__center
                   p.footer__message Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
                   .footer__menu
-                - var icons = ['insta', 'vk', 'github']
-                ul.socials
-                  each item, index in icons
-                    li.socials__item(class=`${index === 1 ? 'active' : ''}`)
-                      a(href="").socials__link
-                        +icon(`${item}`, 'socials__icon')
-                P.footer__presept Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                  - var icons = ['insta', 'vk', 'github']
+                  ul.socials
+                    each item, index in icons
+                      li.socials__item(class=`${index === 1 ? 'active' : ''}`)
+                        a(href="").socials__link
+                          +icon(`${item}`, 'socials__icon')
+                p.footer__presept Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
               
-
-
 
 
       // +image('content/user.jpg', 'user-pic')
