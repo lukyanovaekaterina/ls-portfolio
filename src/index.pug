@@ -43,9 +43,7 @@ html(lang="ru")
                   .avatar.user__avatar
                     +image("content/user.jpg", "avatar__pic")
                   ul.user__desc
-                    - 
-                  - 
-                    - 
+                    -
                       var items = [
                         ['Проживаю', 'Краснодар'],
                         ['Возраст', '38 лет'],
@@ -153,7 +151,7 @@ html(lang="ru")
                     h3.form__label-title Введите ваш email
                     input.form__input(type="text" name="email" id="email")
                 .form__row
-                  label.form__label(for="message")
+                  label.form__label(for="comment")
                     h3.form__label-title Сообщение к письму
                     textarea.form__input.form__textarea(name="comment", id="comment")
                 .form__row
