@@ -20,7 +20,12 @@
   display: flex;
   flex-direction: column;
   width: 50%;
+  font-family: 'Open Sans' sans-serif ;
+   margin-left: 98px;
 
+&:first-child{
+    margin-left: 0;
+  }
   }
 
 &__input{
@@ -28,16 +33,11 @@
   background-color: transparent;
   border-style: none none solid none;
   border-color: #ffffff;
-
+  padding: 8px;
 }
 
 &__textarea{
-  width: 100%;
-  background-color: transparent;
-  border-style: none none solid none;
-  border-color: #ffffff;
-  border: 6px;
-  color: #fff;
-
+  width: 200%;
+  min-height: 100px;
 }
 }
