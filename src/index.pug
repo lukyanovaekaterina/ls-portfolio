@@ -29,12 +29,16 @@ html(lang="ru")
                     li.socials__item(class=`${index === 1 ? 'active' : ''}`)
                       a(href="").socials__link
                         +icon(`${item}`, 'socials__icon')
+              .hero__gamburger
+                +icon('gamburger', 'gamburger__btn')
+                  
             .hero__content
               .user-info
                 h1.user-info__desc Личный сайт <br/> вебразработчика
                 .user-info__username Лукьянова <br/> Екатерина
             .hero__btns
               .scroll-down-btns Скролл
+                +icon('scroll', 'scroll__btn')
         section.about
           .container.about__container
             .about__content
@@ -118,11 +122,11 @@ html(lang="ru")
                 .works__desc-text
                   p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                 a.iconed-link
-                  .iconed-link__icon
+                  +icon('pencil','pencil__iconed-icon')
                   .iconed-link__text Посмотреть сайт
      
       .feedback-section
-         section.reviews
+        section.reviews
           .container.reviews__container
             h2.reviews-title Что обо мне говорят
             .reviews__content
@@ -131,44 +135,44 @@ html(lang="ru")
                   p.reviews-message Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                   .reviews__persona
                     +image('content/Kovalchuk.jpg','reviews__foto')
-                    .reviews__name Дмитрий Ковальчук
+                    .reviews__name Ковальчук Дмитрий
                 li.reviews__item
                   p.reviews-message Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
                   .reviews__persona
                     +image('content/Sabancev.jpg','reviews__foto')
                     .reviews__name Владимир Сабанцев
-                    
-          section.form
+        section.form
           .container.form__container
-            .form__title Связаться со мной
-            form.form__elem(action="", id="myForm")
+            .form__content
+              p.form__title Связаться со мной
+              form.form__elem(action="", id="myForm")
                 .form__col
                   .form__row
-                  label.form__label(for="name")
-                    h3.form__label-title Введите ваше имя
-                    input.form__input(type="text" name="name" id="name")
-                  label.form__label(for="email")
-                    h3.form__label-title Введите ваш email
-                    input.form__input(type="text" name="email" id="email")
-                .form__row
-                  label.form__label(for="comment")
-                    h3.form__label-title Сообщение к письму
-                    textarea.form__input.form__textarea(name="comment", id="comment")
-                .form__row
-                  button.btn__form(type="submit") Отправить
-          footer.footer
-            .footer__content
-              .footer__top
-               .footer__name Лукьянова <br/> Екатерина
-               nav.nav
-                - var menu = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
-                ul.nav__list
-                  each item in menu
-                    li.nav__item
-                      a(href="").nav__link #{item}
-              .footer__bottom
+                    label.form__label(for="name")
+                      h6.form__label-title Введите ваше имя
+                      input.form__input(type="text" name="name" id="name")
+                    label.form__label(for="email")
+                      h6.form__label-title Введите ваш email
+                      input.form__input(type="text" name="email" id="email")
+                  .form__row
+                    label.form__label(for="comment")
+                      h6.form__label-title Сообщение к письму
+                      textarea.form__input.form__textarea(name="comment", id="comment")
+                  .form__row
+                    button.btn__form(type="submit") Отправить
+        footer.footer
+          .footer__content
+            .footer__top
+                .footer__name Лукьянова <br/> Екатерина
+                nav.nav
+                  - var menu = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
+                  ul.nav__list
+                    each item in menu
+                      li.nav__item
+                        a(href="").nav__link #{item}
+            .footer__bottom
                 p.footer__desc Личный сайт <br/> вебразработчика
-                .footer__center
+                 .footer__center
                   p.footer__message Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
                   .footer__menu
                   - var icons = ['insta', 'vk', 'github']
