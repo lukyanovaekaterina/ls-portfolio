@@ -1,20 +1,43 @@
+.form{
+  
+&__container{
+  height: 100vh;
+}
 
-.form__title{
+&__title{
   font-size: 36px;
   color: #ffffff;
   margin: 100px 0px;
 }
 
-.form__row{
+&__row{
   display: flex;
   width: 50%;
+  margin-bottom: 50px;
 }
 
-.form__label{
+&__label{
+  display: flex;
+  flex-direction: column;
   width: 50%;
-}
+  font-family: 'Open Sans' sans-serif ;
+   margin-left: 98px;
 
-.form__input{
+&:first-child{
+    margin-left: 0;
+  }
+  }
+
+&__input{
   width: 100%;
+  background-color: transparent;
+  border-style: none none solid none;
+  border-color: #ffffff;
+  padding: 8px;
 }
 
+&__textarea{
+  width: 200%;
+  min-height: 100px;
+}
+}

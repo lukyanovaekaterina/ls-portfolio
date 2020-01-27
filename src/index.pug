@@ -1,7 +1,7 @@
 include ./mixins.pug
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -31,41 +31,43 @@ html(lang="en")
                         +icon(`${item}`, 'socials__icon')
             .hero__content
               .user-info
-                h1.user-info__desc Личный сайт вебразработчика
-                .user-info__username Лукьянова Екатерина
+                h1.user-info__desc Личный сайт <br/> вебразработчика
+                .user-info__username Лукьянова <br/> Екатерина
             .hero__btns
               .scroll-down-btns Скролл
         section.about
           .container.about__container
-            .about__left
-              .user
-                .avatar.user__avatar
-                  +image("content/user.jpg", "avatar__pic")
-                ul.user__desc
-                  - 
-                    var items = [
-                      ['Проживаю', 'Краснодар'],
-                      ['Возраст', '38'],
-                      ['Родилась', '9 февраля 1981'],
-                    ]
-                  each item in items
-                    li.user__desc-item
-                      .user__key #{item[0]}
-                      .user__value #{item[1]}
-            .about__right
-              h4.about__prolog Привет, меня зовут
-              h2.about__title Екатерина Лукьянова
-              .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-              .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .about__content
+              .about__left
+                .user
+                  .avatar.user__avatar
+                    +image("content/user.jpg", "avatar__pic")
+                  ul.user__desc
+                    -
+                      var items = [
+                        ['Проживаю', 'Краснодар'],
+                        ['Возраст', '38 лет'],
+                        ['Родилась', '9 февраля 1981'],
+                      ]
+                    each item in items
+                      li.user__desc-item
+                        .user__key #{item[0]}
+                        .user__value #{item[1]}
+              .about__right
+                h4.about__prolog Привет, меня зовут
+                h2.about__title Екатерина Лукьянова
+                .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+      
       section.values
         .values__picture
-            +image("bg/Руки.png", "values__pic")
+            +image("bg/Hands.png", "values__pic")
         .container.values__container
           .values__content
             .values__title
-              h2.section-title.values__title-text Чем я могу быть вам полезен
+              h2.values__title-text Чем я могу быть вам полезен
               .values__desc
-                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam earum cupiditate ut, soluta deleniti vel deserunt aliquid nisi nihil molestiae rerum nesciunt labore enim inventore ipsum, cum pariatur corporis.
+                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
             ul.user-skills
               
@@ -83,9 +85,10 @@ html(lang="en")
                         .skill
                           svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
                             circle(r="70" cx="100" cy="100").skill__circle.skill__circle--position--under
-                            //- circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
+                            //-circle(r="70" cx="100" cy="100" stroke-dasharray="85 15").skill__circle.skill__circle--position--above
                             linear-gradient()
-                          .skill__title #{skill}
+                            g.skill__title
+                              text(x="35%" y="50%" fill="#aaaaa9" dominant-baseline="central").skill__name #{skill}
                     
       section.works
         .container.works__container
@@ -119,27 +122,28 @@ html(lang="en")
                   .iconed-link__text Посмотреть сайт
      
       .feedback-section
-        section.reviews
+         section.reviews
           .container.reviews__container
             h2.reviews-title Что обо мне говорят
             .reviews__content
               ul.reviews
-                  li.reviews__item
-                    p.reviews-message Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .reviews__persona
-                      img.reviews__foto(src="/src/images/content/Covalchuk.jpg", alt="")
-                      .reviews__name Дмитрий Ковальчук
-                  li.reviews__item
-                    p.reviews-message Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                    .reviews__persona
-                      img.reviews__foto(src="/src/images/content/Sabancev.jpg", alt="")
-                      .reviews__name Владимир Сабанцев 
-        section.form
+                li.reviews__item
+                  p.reviews-message Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .reviews__persona
+                    +image('content/Kovalchuk.jpg','reviews__foto')
+                    .reviews__name Дмитрий Ковальчук
+                li.reviews__item
+                  p.reviews-message Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                  .reviews__persona
+                    +image('content/Sabancev.jpg','reviews__foto')
+                    .reviews__name Владимир Сабанцев
+                    
+          section.form
           .container.form__container
             .form__title Связаться со мной
             form.form__elem(action="", id="myForm")
-              .form__col
-                .form__row
+                .form__col
+                  .form__row
                   label.form__label(for="name")
                     h3.form__label-title Введите ваше имя
                     input.form__input(type="text" name="name" id="name")
@@ -147,7 +151,7 @@ html(lang="en")
                     h3.form__label-title Введите ваш email
                     input.form__input(type="text" name="email" id="email")
                 .form__row
-                  label.form__label(for="email")
+                  label.form__label(for="comment")
                     h3.form__label-title Сообщение к письму
                     textarea.form__input.form__textarea(name="comment", id="comment")
                 .form__row
@@ -155,33 +159,27 @@ html(lang="en")
           footer.footer
             .footer__content
               .footer__top
-               .footer__name Лукьянова Екатерина
-                nav.nav
-                  - var menu = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
-                  ul.nav__list
-                    each item in menu
-                      li.nav__item
-                        a(href="").nav__link #{item}
+               .footer__name Лукьянова <br/> Екатерина
+               nav.nav
+                - var menu = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
+                ul.nav__list
+                  each item in menu
+                    li.nav__item
+                      a(href="").nav__link #{item}
               .footer__bottom
-                p.footer__desc Личный сайт вебразработчика
+                p.footer__desc Личный сайт <br/> вебразработчика
                 .footer__center
                   p.footer__message Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
                   .footer__menu
-                - var icons = ['insta', 'vk', 'github']
-                ul.socials
-                  each item, index in icons
-                    li.socials__item(class=`${index === 1 ? 'active' : ''}`)
-                      a(href="").socials__link
-                        +icon(`${item}`, 'socials__icon')
-                P.footer__presept Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                  - var icons = ['insta', 'vk', 'github']
+                  ul.socials
+                    each item, index in icons
+                      li.socials__item(class=`${index === 1 ? 'active' : ''}`)
+                        a(href="").socials__link
+                          +icon(`${item}`, 'socials__icon')
+                p.footer__presept Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
               
-
-
-
-
+        
       // +image('content/user.jpg', 'user-pic')
       // +icon('link', 'link-class')
       //  .icon-bg
-        
-
-      

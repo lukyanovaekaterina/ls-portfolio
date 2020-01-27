@@ -2,21 +2,36 @@
  height: 100vh;
  display: flex;
  background-color: #242222;
-}
 
-.values__container{
+&__container{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.values__title{
+&__title{
   text-align: left;
   width: 600px;
 }
 
-.values__title-text{
+&__title-text{
+color: #ffffff;
+font-size: 30px; 
+margin-bottom: 60px;
+}
+
+&__desc{
+  margin-bottom: 84px;
+  line-height: 1.875;
   color: #ffffff;
-  font-size: 30px;
+  opacity: 0.6;
+}
+
+&__picture{
+  display: flex;
+  object-fit: cover;
+  margin-top: 100px;
+  margin-bottom: -70px;
+}
 }

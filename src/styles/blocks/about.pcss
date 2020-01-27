@@ -1,26 +1,38 @@
 .about{
-  height: 100vh;
+  height: 90vh;
 display: flex;
 flex-direction: row;
-}
 
-.container.about__container{
+
+&__content{
+  width: 1040px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 150px;
 }
 
-.about__left{
+&__left{
 width: calc(100%-30px);
 }
 
-.about__title{
+&__title{
   font-size: 36px;
   font-weight: bold;
   color: #ffffff;
+  margin-bottom: 40px;
 }
 
-.about__text{
+&__text{
   line-height: 1.875;
+  margin-bottom: 50px;
+}
+
+&__ps{
+  line-height: 1.875;
+  font-style: italic;
+}
+
 }
