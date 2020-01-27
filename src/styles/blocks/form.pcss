@@ -2,18 +2,49 @@
   
 &__container{
   height: 100vh;
+
+  @include tablets() {
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+&__content{
+
+  @include tablets(){
+    width: 90%;
+  }
 }
 
 &__title{
   font-size: 36px;
   color: #ffffff;
   margin: 100px 0px;
+
+  @include tablets(){
+  display:flex;
+  justify-content: center;
+  }
 }
 
 &__row{
   display: flex;
   width: 50%;
   margin-bottom: 50px;
+
+ 
+  @include tablets(){
+    width: 100%;
+  }
+}
+
+&__row-btn{
+
+  @include tablets(){
+    display: flex;
+  justify-content: center;
+  }
 }
 
 &__label{

@@ -7,6 +7,11 @@
  &__content {
   display: flex;
   flex-direction: row;
+
+  @include tablets(){
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
  &__right {
@@ -14,6 +19,12 @@ display: flex;
 flex-direction: column;
 width: 350px;
 margin-left: 160px;
+
+@include tablets(){
+  display: flex;
+  margin-left: 0;
+  justify-content: center;
+}
 }
 
  &__title{
@@ -43,6 +54,11 @@ margin-left: 160px;
   height: 540px;
   width: 980px;
   object-fit: cover;
+
+  @include tablets(){
+    width: 630px;
+    height: 350px;
+  }
 }
 
 .tags{

@@ -5,16 +5,30 @@
 &__container{
   display: flex;
   flex-direction: column;
+
+  @include tablets(){
+    justify-content: center;
+  }
 }
 
 &__content{
   width: 63%;
+
+  @include tablets(){
+    width: 90%;
+    justify-content: space-between;
+  }
 }
 
 &-title{
   font-size: 36px;
   color: #ffffff;
   margin: 100px 0px;
+
+  @include tablets(){
+    display: flex;
+    justify-content: center;
+  }
 }
 
 &-message{

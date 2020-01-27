@@ -3,6 +3,11 @@
  display: flex;
  background-color: #242222;
 
+ @include tablets() {
+   flex-direction: column-reverse;
+   align-items: center;
+ }
+
 &__container{
   display: flex;
   flex-direction: row;
@@ -10,9 +15,21 @@
   align-items: center;
 }
 
+&__content{
+
+  @include tablets{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 &__title{
   text-align: left;
   width: 600px;
+
+  @include tablets(){
+    justify-content: center;
+  }
 }
 
 &__title-text{
@@ -33,5 +50,12 @@ margin-bottom: 60px;
   object-fit: cover;
   margin-top: 100px;
   margin-bottom: -70px;
+
+  @include tablets(){
+    margin-bottom: -55px;
+    margin-top: 0;
+    height: 380px;
+    transform: rotate(-90deg);
+  }
 }
 }
