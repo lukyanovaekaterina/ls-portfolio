@@ -49,8 +49,13 @@
   text-align: end;
 
   @include tablets() {
+    justify-content: center;
     text-align: center;
+    line-height: 1.7;
   }
+
+  
+
 }
 
 &__username{
@@ -64,5 +69,10 @@
     font-size: 48px;
     line-height: 1.0;
   }
+
+@include phones() {
+line-height: 1.3;
+  }
+
 }
 }
