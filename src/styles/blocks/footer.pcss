@@ -1,11 +1,16 @@
 
 .footer{
-  position: absolute;
-  width: 100%;
+  position: relative;
   bottom: 0;
   background: #222427;
   padding-top: 1.625rem;
 
+  @include tablets() {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
 &__content{
   display: flex;
   flex-direction: column;
@@ -15,6 +20,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+
+  @include phones(){
+    flex-direction: column;
+  }
 }
 
 &__name{
@@ -28,5 +37,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+
+  @include phones(){
+    flex-direction: column;
+  }
 }
 }
