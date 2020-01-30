@@ -25,6 +25,10 @@ margin-left: 160px;
   margin-left: 0;
   justify-content: center;
 }
+
+@include phones() {
+  width: auto;
+}
 }
 
  &__title{
@@ -32,6 +36,11 @@ margin-left: 160px;
   color: #000000;
   font-weight: bold;
   margin-bottom: 50px;
+
+  @include phones(){
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
 }
 
  &__desc-text{
@@ -47,6 +56,11 @@ margin-left: 160px;
   color: #333c49;
   font-weight: bold;
   margin: 100px 0;
+
+  @include phones(){
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
 }
 
 .slider__fillpic{
@@ -73,8 +87,13 @@ margin-left: 160px;
   display: flex;
   flex-direction: row;
 
+  @include phones(){
+    margin-bottom: 100px;
+  }
+
   &__text{
     margin-left: 20px;
+    font-weight: bold;
   }
 }
 

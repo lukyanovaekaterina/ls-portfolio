@@ -27,18 +27,25 @@
 }
 
 
-.scill__title{
-  stroke: #aaaaa9;
-  fill: #aaaaa9;
+.skill__circle-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 18px;
+  color: rgba($text-color, .5);
+  padding: 14px;
 }
 
 .skill__circle--position--under{
-  stroke: #d78720;
-  stroke-width: 10px;
+  stroke:#aaaaa9;
+  stroke-width: 4px;
 }
 
 .skill__circle--position--above{
-stroke: #aaaaa9;
-stroke-width: 4px;
-stroke-dashoffset: 0;
+stroke: #d78720;
+stroke-width: 10px;
+stroke-dasharray: 440;
+stroke-dashoffset: 200;
 }

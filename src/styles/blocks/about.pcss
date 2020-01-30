@@ -30,6 +30,11 @@ width: calc(100%-30px);
   font-weight: bold;
   color: #ffffff;
   margin-bottom: 40px;
+
+  @include phones() {
+    font-size: 30px;
+    line-height: 1.2;
+  }
 }
 
 &__text{
