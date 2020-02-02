@@ -80,33 +80,8 @@ html(lang="ru")
         .container.works__container
           h2.section-title Мои работы
           .works__content
-            .works__left
-              .slider
-                +image("bg/preview.png", "slider__fillpic")
-                .slider__preview
-                  ul.previews
-                    - for (var i = 0; i < 3; i++)
-                      li.previews__item
-                        img.previews__pic
-                .slider__buttons
-                  .slider-button
-                    button.slider-buttons__item.slider-buttons__item--slide--prev 
-                    button.slider-buttons__item.slider-buttons__item--slide--next
-
-            .works__right
-              .works__tags
-                - var tags = ['html', 'css', 'javascript']
-                ul.tags
-                  each tag in tags
-                    li.tags__item #{tag}
-              .works__text
-                h3.works__title Сайт школы образования
-                .works__desc-text
-                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                a.iconed-link
-                  +icon('pencil','pencil__iconed-icon')
-                  .iconed-link__text Посмотреть сайт
-     
+            #slider-component
+              
       .feedback-section
         section.reviews
           .container.reviews__container
