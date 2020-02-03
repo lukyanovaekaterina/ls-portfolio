@@ -1,0 +1,68 @@
+.parallax{
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  &__layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__layer-sky{
+    object-fit: cover;
+    width: 100%;
+    top: 0;
+    }
+
+    &__layer-mountains{
+    width: 100%;
+    top: 400px;
+
+    @include tablets(){
+      top:200px;
+    }
+    }
+
+    &__layer-locomotive{
+        width: 100%;
+        top: 530px;
+
+        @include tablets(){
+          top: 260px;
+        }
+    }
+    &__layer-grass{
+        width: 100%;
+        top: 940px;
+        @include tablets(){
+          top: 470px;
+        }
+    }
+    &__layer-fon2{
+      top: 1020px;
+      @include tablets(){
+        top: 500px;
+      }
+
+    }
+
+    &__layer-fon{
+      top: 1020px;
+
+      @include tablets(){
+        top: 500px;
+      }
+
+
+    }
+  }
+
+.pararllax__image{
+  position: absolute;
+}
