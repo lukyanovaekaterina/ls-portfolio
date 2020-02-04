@@ -13,7 +13,7 @@
 }
 
 &__content{
-  width: 63%;
+  width: 65%;
 
   @include tablets(){
     width: 90%;
@@ -37,21 +37,38 @@
   }
 }
 
+&__item{
+  width: 80%;
+}
 &-message{
   margin-bottom: 26px;
+  color: #ffffff;
+  opacity: 0.6;
+  line-height: 1.875;
 }
 
-&__persona{
+&__user-info{
+  margin-top: 28px;
+  align-items: center;
+}
+
+&__user{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-&__name{
+&__username{
   color: #ffffff;
+  font-size: 18px;
 }
 
-&__foto{
+&__about{
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+&__user-foto{
   display: block;
   width: 80px;
   height: 80px;
@@ -60,4 +77,32 @@
   border-radius:50%;
 }
 
+}
+.reviews__wrap{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin-right: 5%;
+
+  &:last-child{
+    margin-right: 0;
+  }
+}
+
+.quote__icon{
+  width: 80px;
+  height: 70px;
+  fill: #2f3031;
+  margin-right: 20px;
+}
+
+.reviews__title-section{
+  display: flex;
+  flex-direction: row;
+}
+
+.reviews__buttons{
+  display: flex;
+  flex-direction: row;
+  margin: 100px 0px 100px 110px;
 }

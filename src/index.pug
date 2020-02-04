@@ -98,19 +98,33 @@ html(lang="ru")
       .feedback-section
         section.reviews
           .container.reviews__container
-            h2.reviews-title Что обо мне говорят
+            .reviews__title-section
+              h2.reviews-title Что обо мне говорят
+              .reviews__buttons
+                button.reviews__button.reviews__button-prev(type="button")
+                  +icon('arrow-down', 'reviews__icon')
+                button.reviews__button.reviews__button-next(type="button")
+                  +icon('arrow-down', 'reviews__icon')
             .reviews__content
-              ul.reviews
-                li.reviews__item
-                  p.reviews-message Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                  .reviews__persona
-                    +image('content/Kovalchuk.jpg','reviews__foto')
-                    .reviews__name Ковальчук Дмитрий
-                li.reviews__item
-                  p.reviews-message Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                  .reviews__persona
-                    +image('content/Sabancev.jpg','reviews__foto')
-                    .reviews__name Владимир Сабанцев
+              .reviews
+                .reviews__wrap
+                  +icon('quote', 'quote__icon')
+                  .reviews__item
+                    p.reviews-message Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .reviews__user
+                      +image('content/Kovalchuk.jpg','reviews__user-foto')
+                      .reviews__user-info
+                        .reviews__username Ковальчук Дмитрий
+                        .reviews__about Основатель Loftschool
+                .reviews__wrap
+                  +icon('quote', 'quote__icon')
+                  .reviews__item
+                    p.reviews-message Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                    .reviews__user
+                      +image('content/Sabancev.jpg','reviews__user-foto')
+                      .reviews__user-info
+                        .reviews__username Владимир Сабанцев
+                        .reviews__about Преподаватель
         section.form
           .container.form__container
             .form__content
