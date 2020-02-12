@@ -13,7 +13,7 @@
   position: relative;
   padding: 80px 0;
   display: flex;
-  width: 82%;
+  width: 1480px;
   margin: 0 auto;
   justify-content: space-between;
 
@@ -85,8 +85,18 @@
 }
 
 &__comment-left{
+  width: 33%;
   @include tablets() {
+    width: 100%;
     margin-bottom: 20px;
+  }
+}
+
+&__comment-reiht{
+  width: 46%;
+
+  @include tablets(){
+    width: 100%;
   }
 }
 
