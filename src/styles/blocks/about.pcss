@@ -5,7 +5,7 @@ flex-direction: row;
 position: relative;
 
 @include phones() {
-  height: 100%;
+  height: 100vh;
 }
 
 
@@ -18,14 +18,29 @@ position: relative;
 
   @include phones() {
     flex-direction: column;
-    margin-top: auto;
+    margin-top: 0;
   }
 }
 
 &__left{
-width: calc(100%-30px);
+width: 20%;
+margin-right: 130px;
+
+@include phones(){
+  width: 100%;
+  margin: 0 auto;
+}
 }
 
+&__right{
+  width: 38%;
+
+  @include phones(){
+    width: 100%;
+    margin: 0 auto;
+  }
+
+}
 &__title{
   font-size: 36px;
   font-weight: bold;

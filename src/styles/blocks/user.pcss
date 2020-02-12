@@ -27,7 +27,6 @@
   align-items: flex-start;
   color: #ffffff;
   opacity: 0.6;
-
 }
 
 &__key{
@@ -45,7 +44,10 @@
   @include tablets(){
     flex-direction: column;
     margin: 0 auto;
-    margin-bottom: 380px;
+  }
+
+  @include phones(){
+    margin: 0 auto;
   }
 
   &__desc{
