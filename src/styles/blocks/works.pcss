@@ -31,6 +31,10 @@
   font-weight: 700;
   line-height: 1.875;
   margin-bottom: 50px;
+
+  @include tablets(){
+    text-align: center;
+  }
 }
 
 }
@@ -42,6 +46,7 @@
   @include tablets(){
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 
   &__fullpic-container{
@@ -50,8 +55,6 @@
 
   &__fillpic{
     display: flex;
-    //height: 540px;
-    //width: 980px;
     object-fit: cover;
   
     @include tablets(){
@@ -62,6 +65,12 @@
 
   &__button{
     margin-top: 460px;
+
+    @include tablets(){
+      display: flex;
+      margin-top: 220px;
+      flex-direction: column;
+    }
   }
 
 
@@ -74,6 +83,13 @@
     height: 100px;
     margin-left: -680px;
     margin-top: 460px;
+
+    @include tablets(){
+      margin-top: 220px;
+      margin-left: -36rem;
+      width: 525px;
+    }
+
   
     @include phones {
       display: none;
@@ -105,8 +121,10 @@
 
 @include tablets(){
   display: flex;
-  margin-left: 0;
+  align-items: center;
   justify-content: center;
+  margin-left: 0;
+  width: 60%;
 }
 
 @include phones() {
@@ -124,6 +142,10 @@
 &__link{
     display: flex;
     flex-direction: row;
+
+    @include tablets(){
+      justify-content: center;
+    }
   }
 
 }
