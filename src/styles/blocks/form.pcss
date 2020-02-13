@@ -1,19 +1,66 @@
 .form{
+  height: 89vh;
+  color: #ffffff;
   
 &__container{
-  height: 100vh;
+  height: 100%;
+
+  @include tablets() {
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+&__content{
+
+  @include tablets(){
+    width: 90%;
+  }
 }
 
 &__title{
   font-size: 36px;
   color: #ffffff;
   margin: 100px 0px;
+
+  @include tablets(){
+  display:flex;
+  justify-content: center;
+  }
+
+  @include phones(){
+    font-size: 24px;
+    margin: 50px 0px;
+  }
 }
+
 
 &__row{
   display: flex;
   width: 50%;
   margin-bottom: 50px;
+
+ 
+  @include tablets(){
+    width: 100%;
+  }
+
+  @include phones() {
+    flex-direction: column;
+  }
+}
+
+&__row-btn{
+
+  @include tablets(){
+    display: flex;
+  justify-content: center;
+  }
+
+  @include tablets() {
+    margin-bottom: 110px;
+  }
 }
 
 &__label{
@@ -26,6 +73,12 @@
 &:first-child{
     margin-left: 0;
   }
+
+  @include phones(){
+    width: 100%;
+    margin-left: 0;
+  }
+
   }
 
 &__input{
@@ -34,10 +87,18 @@
   border-style: none none solid none;
   border-color: #ffffff;
   padding: 8px;
+  color: #ffffff;
 }
 
 &__textarea{
   width: 200%;
   min-height: 100px;
+  border-color: #ffffff;
+    border-style: none none solid none;
+    border-width: 2px;
+
+  @include phones() {
+    width: 100%;
+  }
 }
 }

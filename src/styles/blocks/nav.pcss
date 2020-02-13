@@ -1,9 +1,11 @@
-.nav__list {
+.nav{
+  
+&__list {
   display: flex;
   align-items: center;
 }
 
-.nav__item {
+&__item {
   margin-right: 52px;
   
   &:last-child {
@@ -11,8 +13,19 @@
   }
 }
 
-.nav__link{
+&__link{
   text-decoration:none;
   color: #fff;
 
+}
+
+@include tablets() {
+  display: none;
+}
+
+}
+
+.nav__list-footer{
+  display: flex;
+  flex-wrap: wrap;
 }

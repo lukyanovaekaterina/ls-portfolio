@@ -1,35 +1,55 @@
 
 .skill__shape{
-  width: 200px;
-  height: 200px;
+  width: 155px;
+  height: 155px;
   fill: transparent;
   
 }
 
 .skills-row__list{
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+
+  @include phones(){
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .skills-row__title{
   font-size: 24px;
   line-height: 2;
   color: #ffffff;
+
+  @include tablets(){
+    text-align: center;
+  }
+}
+
+.skill{
+  position: relative;
 }
 
 
-.scill__title{
-  stroke: #aaaaa9;
-  fill: #aaaaa9;
+.skill__circle-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  padding: 14px;
+  color: #ffffff;
+  opacity: 0.6;
 }
 
 .skill__circle--position--under{
-  stroke: #d78720;
-  stroke-width: 10px;
+  stroke:#aaaaa9;
+  stroke-width: 4px;
 }
 
 .skill__circle--position--above{
-stroke: #aaaaa9;
-stroke-width: 4px;
-stroke-dashoffset: 0;
+stroke: #d78720;
+stroke-width: 10px;
+stroke-dasharray: 440;
+stroke-dashoffset: 200;
 }
