@@ -156,3 +156,16 @@ module.exports = (env, argv) => {
 
   return config;
 };
+
+const js = {
+  test: /\.js$/,
+  loader: "babel-loader",
+  exclude: /node_modules/,
+  options: {
+    presets: ["@babel/preset-env"],
+    plugins: [
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-syntax-dynamic-import"
+    ]
+  }
+};
