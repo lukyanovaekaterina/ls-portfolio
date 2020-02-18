@@ -1,6 +1,5 @@
 <template lang="pug">
-  div
-    
+  div 
     header.header-container
       appHeader
     
@@ -21,21 +20,20 @@
 <script>
 import appHeader from '../admin/components/header';
 import navs from '../admin/components/navs';
- import about from '../admin/components/about';
- import work from '../admin/components/work';
- import reviews from '../admin/components/reviews';
+import about from '../admin/components/about';
+import work from '../admin/components/work';
+import reviews from '../admin/components/pages/reviews';
 
- export default {
+export default {
    name: 'app',
    components: {
      appHeader, navs, about, work, reviews
    },
    data() {
      return {
-
      }
    }
- }
+ };
 </script>
 
 <style lang="postcss" scoped>
@@ -71,7 +69,6 @@ body {
    * {
     box-sizing: border-box;
   }
-
 
   .about{
     background-color: #f8f9fe;

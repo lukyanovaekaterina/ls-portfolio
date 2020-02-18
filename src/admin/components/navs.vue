@@ -7,7 +7,7 @@
             :data-text="nav.title"
             :to="tab.href"
             exact-active-class="active"
-          ).navs__link  
+            ).navs__link  
 </template> 
 
 <script>

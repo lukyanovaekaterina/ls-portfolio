@@ -85,8 +85,8 @@ module.exports = (env, argv) => {
 
   const config = {
     entry: {
-      main: "./src/main.js",
-      admin: "./src/admin/main.js"
+      main: ["babel-polyfill", "./src/main.js"],
+      admin: ["babel-polyfill", "./src/admin/main.js"]
     },
     output: {
       path: path.resolve(__dirname, "./dist"),
@@ -155,17 +155,4 @@ module.exports = (env, argv) => {
   }
 
   return config;
-};
-
-const js = {
-  test: /\.js$/,
-  loader: "babel-loader",
-  exclude: /node_modules/,
-  options: {
-    presets: ["@babel/preset-env"],
-    plugins: [
-      "@babel/plugin-transform-runtime",
-      "@babel/plugin-syntax-dynamic-import"
-    ]
-  }
 };

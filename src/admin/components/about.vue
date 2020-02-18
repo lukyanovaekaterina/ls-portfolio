@@ -24,8 +24,14 @@ export default {
   }),
   methods: {
     ...mapActions("categories", ["addCategory"]),
-    addNewCategory(){
-      this.addCategory(this.title);
+    async addNewCategory(){
+      try {
+
+       await this.addCategory(this.title); 
+      } catch (error) {
+        alert(error.message);
+      }
+      
     }
   }
 };

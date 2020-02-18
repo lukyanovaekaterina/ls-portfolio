@@ -34,7 +34,7 @@
         form.review__card
           .review__card-content
             label.form__pic(for="reviewPic")
-              img.review__card-pic(src="../Sabancev.jpg" alt="")
+              img.review__card-pic(src="../../Sabancev.jpg" alt="")
               input.form__input.form__input-user(type="text" name="name" id="name")
             label.form__card(for="review")
               textarea.form__input.form__textarea-card(name="commentCard" id="review")
@@ -45,7 +45,7 @@
 
 <style lang="postcss" scoped>
 @import "normalize.css";
-@import "../../styles/mixins.pcss";
+@import "../../../styles/mixins.pcss";
 
 li{
   text-decoration: none;

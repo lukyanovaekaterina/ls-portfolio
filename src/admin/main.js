@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'; 
 import store from './store';
 import $axios from './requests';
-import '@babel/polyfill';
 
 store.$axios = $axios;
 

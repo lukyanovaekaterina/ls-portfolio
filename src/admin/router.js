@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 const routes = [
   {
@@ -20,12 +20,22 @@ const routes = [
 },
 {
   path: "/reviews",
-  component: () => import("../admin/components/reviews.vue"),
+  component: () => import("../admin/components/pages/reviews.vue"),
   meta: {
     title: "Блок «Отзывы»"
   }
 },
+{
+  path: "/login",
+  component: () => import("../admin/components/pages/login.vue"),
+  meta: {
+    public: true
+  }
+}
 
 ];
 
-export default new VueRouter({ routes, mode: 'history' });
+export default new VueRouter({ 
+  base: '/admin',
+  routes,  
+});
