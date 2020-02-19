@@ -1,20 +1,15 @@
 <template lang="pug">
   div 
-    header.header-container
-      appHeader
-    
-    section.navs-container
-      navs
+    template
+      header
+        appHeader
       
-    section.about
-      about
-
-    section.work
-      work
-
-    section.reviews
-      reviews
+      section.navs-container
+        navs
       
+      main.content-container
+        router-view
+
 </template>
 
 <script>
@@ -25,14 +20,9 @@ import work from '../admin/components/work';
 import reviews from '../admin/components/pages/reviews';
 
 export default {
-   name: 'app',
    components: {
      appHeader, navs, about, work, reviews
    },
-   data() {
-     return {
-     }
-   }
  };
 </script>
 

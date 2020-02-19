@@ -4,6 +4,11 @@ export default {
   state: {
     categories: []
   },
+  data: () => ({
+    user: {
+      id: ""
+    }
+  }),
   mutations: {},
   actions: {
       async addCategory(store, title) {
@@ -14,6 +19,15 @@ export default {
             error.response.data.error || error.response.data.message 
           );
         }     
+   },
+
+   async fetchCategories(store){
+     try {
+       const response = await this.$axios.get("/categories/", this.user);
+       
+     } catch (error) {
+       
+     }
    }
   }
 };

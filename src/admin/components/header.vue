@@ -1,5 +1,5 @@
 <template lang="pug">
-  .header
+  .header__container
     .header__content
       .header__overhead-fon
         .header__overhead
@@ -52,19 +52,19 @@ body {
   }
 
 .header{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 1200px;
-  margin: 0 auto;
+   &__container{
+    background-color: #43436b;
+    justify-content: center;
+  }
   
   &__content{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 1200px;
   height: 100%;
+  margin: 0 auto;
   }
 &__overhead{
   width: 90%;

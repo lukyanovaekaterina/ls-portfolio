@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const token = localStorage.getItem("token")
+const token = localStorage.getItem("token");
 
 if (!token) console.warn("Отсутствует токен")
 

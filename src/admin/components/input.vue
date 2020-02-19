@@ -59,7 +59,7 @@ export default {
     }
   },
   components: {
-    errorsTooltip: () => import("../components/errors-tooltip")
+    errorsTooltip: () => import("./errors-tooltip")
   }
 };
 </script>
@@ -123,7 +123,6 @@ export default {
 }
 .error {
   .field__elem {
-    /*border-color: $errors-color;*/
   }
   .input__error-tooltip {
     display: block;

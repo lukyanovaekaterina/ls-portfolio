@@ -10,10 +10,9 @@
         form(@submit.prevent="addNewCategory").categories-form
           input(type="text" v-model="title")
           input(type="submit" value="Добавить")
-          ul.skill-list
-            li.skill-list__item()
+        ul.skill-list
+          li.skill-list__item()
    
-
 </template>
 
 <script>
@@ -22,11 +21,13 @@ export default {
   data: () => ({
     title: ""
   }),
+  created() {
+    this.fetchCategories();
+  },
   methods: {
-    ...mapActions("categories", ["addCategory"]),
+    ...mapActions("categories", ["addCategory", "fetchCategories"]),
     async addNewCategory(){
       try {
-
        await this.addCategory(this.title); 
       } catch (error) {
         alert(error.message);
@@ -87,7 +88,6 @@ body {
     display: flex;
     width: 40%;
     justify-content: space-between;
-    margin:60px 0;
   }
   &__append{
     color: #383bcf;
