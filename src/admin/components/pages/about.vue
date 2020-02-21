@@ -11,16 +11,28 @@
           input(type="text" v-model="title")
           input(type="submit" value="Добавить")
         ul.skill-list
-          li.skill-list__item()
+          li.skill-list__item(v-for="category in categories" :key="category.id")
+            skills-group(
+              :category="category"
+            )
    
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
+
 export default {
+  components: {
+    skillsGroup: () => import("./../skills-group.vue")
+  },
   data: () => ({
     title: ""
   }),
+  computed: {
+    ...mapState("categories", {
+      categories: state => state.categories
+    })
+  },
   created() {
     this.fetchCategories();
   },
@@ -40,7 +52,7 @@ export default {
 
 <style lang="postcss" scoped>
 @import "normalize.css";
-@import "../../styles/mixins.pcss";
+@import "./../../../styles/mixins.pcss";
 
 li{
   text-decoration: none;

@@ -6,7 +6,7 @@
       
       section.navs-container
         navs
-      
+
       main.content-container
         router-view
 
@@ -15,13 +15,13 @@
 <script>
 import appHeader from '../admin/components/header';
 import navs from '../admin/components/navs';
-import about from '../admin/components/about';
-import work from '../admin/components/work';
-import reviews from '../admin/components/pages/reviews';
+//import about from '../admin/components/pages/about';
+//import work from '../admin/components/pages/work';
+//import reviews from '../admin/components/pages/reviews';
 
 export default {
    components: {
-     appHeader, navs, about, work, reviews
+     appHeader, navs
    },
  };
 </script>

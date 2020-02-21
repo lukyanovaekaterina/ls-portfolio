@@ -33,7 +33,7 @@
           label.form__label-sample(for="fileField") Добавить <br/> работу
             input.form__input-sample(type="file" name="fileField" id="fileField")
         form.work__card
-          img.work__card-pic(src="../slider-1.jpg" alt="")
+          img.work__card-pic(src="slider-1.jpg" alt="")
           label.form__card(for="commentCard")
             h6.form__card-title Новая работа
             textarea.form__input.form__textarea-card(name="commentCard" id="commentCard" placeholder="Описание этой работы")
@@ -47,7 +47,7 @@
 <style lang="postcss" scoped>
 
 @import "normalize.css";
-@import "../../styles/mixins.pcss";
+@import "../../../styles/mixins.pcss";
 
 li{
   text-decoration: none;

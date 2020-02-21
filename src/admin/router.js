@@ -6,14 +6,14 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: "/",
-    component: () => import("../admin/components/about.vue"),
+    component: () => import("../admin/components/pages/about.vue"),
     meta: {
       title: "Блок «Обо мне»"
   }
 },
 {
   path: "/work",
-  component: () => import("../admin/components/work.vue"),
+  component: () => import("../admin/components/pages/work.vue"),
   meta: {
     title: "Блок «Работы»"
   }
