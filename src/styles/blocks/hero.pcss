@@ -3,12 +3,6 @@
   position: relative;
   display: flex;
 
-  @include tablets(){
-    background-image: url('../images/bg/TrainBridge.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    object-fit: inherit;
-  }
 }
 
 .hero{
@@ -41,6 +35,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -360px;
+
+  @include desktop(){
+    margin-top: -640px;
+  }
+
+  @include tablets(){
+  margin-top: -680px;
+  }
+
+  @include phones(){
+    margin-top: -360px;
+  }
 }
 
 &__btns {
