@@ -99,10 +99,19 @@
 .reviews__title-section{
   display: flex;
   flex-direction: row;
+
+  @include phones(){
+    flex-direction: column;
+  }
 }
 
 .reviews__buttons{
   display: flex;
   flex-direction: row;
   margin: 100px 0px 100px 110px;
+
+  @include phones(){
+    margin: 0 auto;
+    padding-bottom: 1.875rem;
+  }
 }

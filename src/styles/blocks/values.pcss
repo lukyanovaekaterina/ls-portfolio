@@ -28,6 +28,7 @@
   }
 
   @include phones() {
+    display: block;
     width: 100%;
   }
 }
@@ -38,6 +39,11 @@
 
   @include tablets(){
     width: 60%;
+  
+  }
+
+  @include phones() {
+    width: 80%;
   }
   
   }
@@ -86,16 +92,17 @@ margin-bottom: 60px;
 }
 
 &__picture{
-  display: flex;
-  object-fit: cover;
-  margin-top: 100px;
-  margin-bottom: -70px;
+  position: absolute;
+  left: 0;
 
 
   @include tablets() {
+    display: flex;
+    position: relative;
     transform: rotate(-90deg);
-    height: 530px;
+    height: 520px;
     z-index: 0;
+    top: 85px;
 }
 
 }
