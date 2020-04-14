@@ -23,19 +23,18 @@ html(lang="ru")
             img(src=require("images/bg/5.png")).parallax__image
           .parallax__layer.parallax__layer-fon2
             img(src=require("images/bg/5.png")).parallax__image  
-        section.hero
+        section.hero#hero
           .container.hero__container
             header.header.hero__header
               .hero__logo
                 .logo ЛЕ
               .hero__links 
                 nav.nav
-                  - var menu = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
-                 
-                  ul.nav__list
+                ul.nav__list
+                  - var menu = [['#hero', 'Главная'], ['#about', "Обо мне"], ['#values', "Навыки"], ['#works', "Работы"], ['#reviews',"Отзывы"], ['#form', "Связаться"]] 
                     each item in menu
                       li.nav__item
-                        a(href="").nav__link #{item}
+                        a(href=item[0] class="nav__item-link").nav__link #{item[1]}
               .hero__menu
                 - var icons = ['insta', 'vk', 'github']
                 ul.socials
@@ -54,7 +53,7 @@ html(lang="ru")
               .scroll-down-btns Скролл
                 +icon('scroll', 'scroll__btn')
                 
-        section.about
+        section.about#about
           .container.about__container
             .about__content
               .about__left
@@ -78,7 +77,7 @@ html(lang="ru")
                 .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                 .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
       
-      section.values
+      section.values#values
         .container.values__container
           .values__picture
               +image("bg/Hands.png", "values__pic")
@@ -91,36 +90,20 @@ html(lang="ru")
 
               #skills-component
                                   
-      section.works
+      section.works#works
         .container.works__container
           h2.section-title Мои работы
           .works__content
             #slider-component
               
-      .feedback-section
+      .feedback-section#reviews
         section.reviews
           .container.reviews__container
             #slider-reviews
 
-        section.form
+        section.form(id='form')
           .container.form__container
-            .form__content
-              p.form__title Связаться со мной
-              form.form__elem(action="", id="myForm")
-                .form__col
-                  .form__row
-                    label.form__label(for="name")
-                      h6.form__label-title Введите ваше имя
-                      input.form__input(type="text" name="name" id="name")
-                    label.form__label(for="email")
-                      h6.form__label-title Введите ваш email
-                      input.form__input(type="text" name="email" id="email")
-                  .form__row
-                    label.form__label(for="comment")
-                      h6.form__label-title Сообщение к письму
-                      textarea.form__input.form__textarea(name="comment", id="comment")
-                  .form__row-btn
-                    button.btn__form(type="submit") Отправить
+            #slider-form
       footer.footer
         .footer__content
           .footer__user
@@ -132,11 +115,11 @@ html(lang="ru")
           .footer__reiht
             .footer__nav
               nav.nav-footer
-                - var menu = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
+                - var menu = [['#hero', 'Главная'], ['#about', "Обо мне"], ['#values', "Навыки"], ['#works', "Работы"], ['#reviews',"Отзывы"], ['#form', "Связаться"]] 
                   ul.nav__list-footer
                     each item in menu
                       li.nav__item
-                        a(href="").nav__link #{item}
+                        a(href=item[0]).nav__link #{item[1]}
             .footer__comment
               .footer__comment-left
                 p.footer__message Этот сайт я сделалf в рамках обучения в Школе онлайн образования Loftschool

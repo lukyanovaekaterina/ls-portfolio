@@ -17,7 +17,7 @@ new Vue({
         pageDots: false,
         wrapAround: true,
         cellAlign: 'left',
-        groupCells: 2
+        groupCells: 1
       },
       reviews: [{
         text: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
