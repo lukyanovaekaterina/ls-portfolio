@@ -13,9 +13,10 @@
 </template>
 
 <script>
+import { mapState, mapActions, mapGetters} from "vuex";
 import appHeader from '../admin/components/header';
 import navs from '../admin/components/navs';
-//import about from '../admin/components/pages/about';
+import about from '../admin/components/pages/about';
 //import work from '../admin/components/pages/work';
 //import reviews from '../admin/components/pages/reviews';
 

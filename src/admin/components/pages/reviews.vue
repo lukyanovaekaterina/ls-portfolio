@@ -3,7 +3,7 @@
     .reviews__content
       p.reviews__title Блок "Отзывы"
       .form__content-review
-        p.form__title-review Новый отзыв
+        p.form__title-review Добавить отзыв
         form.form__review(action="", id="FormReview")
           .form__review-foto
             .review__user

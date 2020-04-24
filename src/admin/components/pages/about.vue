@@ -5,16 +5,15 @@
         h1.about__name Блок "Обо мне"
         button.about__append() Добавить группу
 
-      .about-form__content
-        .container.container--mobile-wide
+    .about-form__content
+      .container.container--mobile-wide
         form(@submit.prevent="addNewCategory").categories-form
           input(type="text" v-model="title")
           input(type="submit" value="Добавить")
         ul.skill-list
           li.skill-list__item(v-for="category in categories" :key="category.id")
             skills-group(
-              :category="category"
-            )
+              :category="category")
    
 </template>
 
@@ -98,11 +97,37 @@ body {
   }
   &__title{
     display: flex;
-    width: 40%;
-    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  &__name {
+    margin-bottom: 0;
+    margin-right: 60px;
+    @include phones {
+      margin-bottom: 28px;
+    }
   }
   &__append{
-    color: #383bcf;
+    color: $links-color;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  &:before {
+    content: "+";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #006aed, #3f35cb);
+    line-height: 20px;
+    color: #fff;
+    margin-right: 13px;
+    flex-shrink: 0;
+    flex-basis: 20px;
+  }
   }
   &__table{
     width: 524px;
@@ -120,4 +145,27 @@ body {
   }  
 }
 
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  @include phones {
+    margin-left: 0;
+  }
+}
+.skill-list__item {
+  width: calc(100% / 2 - 30px);
+  margin-left: 30px;
+  margin-bottom: 30px;
+  &.loading {
+    opacity: 0.5;
+    pointer-events: none;
+    filter: grayscale(100%);
+  }
+  @include phones {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+}
 </style>

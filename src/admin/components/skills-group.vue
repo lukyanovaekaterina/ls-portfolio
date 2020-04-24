@@ -1,5 +1,6 @@
 <template lang="pug">
   .skill-container
+    pre {{category}}
     h2 {{category.category}}
     hr
     table
@@ -8,6 +9,7 @@
         :key="skill.id"
         :skill="skill"
       )
+
     hr
     form(
       @submit.prevent="addNewSkill"
@@ -35,7 +37,7 @@ export default {
         percent: 0,
         category: this.category.id
       }
-    };
+    }
   },
   props: {
     category: {
@@ -45,11 +47,22 @@ export default {
     }
   },
   methods: {
-       ...mapActions("skills", ["addSkill"]),
+    handleFile(e) {
+      const file = e.target.files[0];
+
+      this.file = file;
+
+      const formData = new FormData();
+
+      formData.append("photo", this.file);
+
+    },
+    ...mapActions("skills", ["addSkill"]),
     async addNewSkill() {
-      this.loading = true
+      this.loading = true;
       try {
         await this.addSkill(this.skill);
+
         this.skill.title = "";
         this.skill.percent = "";
       } catch (error) {

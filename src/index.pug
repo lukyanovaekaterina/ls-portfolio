@@ -28,13 +28,9 @@ html(lang="ru")
             header.header.hero__header
               .hero__logo
                 .logo ЛЕ
-              .hero__links 
-                nav.nav
-                ul.nav__list
-                  - var menu = [['#hero', 'Главная'], ['#about', "Обо мне"], ['#values', "Навыки"], ['#works', "Работы"], ['#reviews',"Отзывы"], ['#form', "Связаться"]] 
-                    each item in menu
-                      li.nav__item
-                        a(href=item[0] class="nav__item-link").nav__link #{item[1]}
+              .hero__nav#hero__nav
+                include ./templates/nav.pug
+                  
               .hero__menu
                 - var icons = ['insta', 'vk', 'github']
                 ul.socials
@@ -43,7 +39,8 @@ html(lang="ru")
                       a(href="").socials__link
                         +icon(`${item}`, 'socials__icon')
               .hero__gamburger
-                +icon('gamburger', 'gamburger__btn')
+                include ./templates/gamburger.pug
+                //+icon('gamburger', 'gamburger__btn')
                   
             .hero__content
               .user-info
@@ -63,9 +60,9 @@ html(lang="ru")
                   ul.user__desc
                     -
                       var items = [
-                        ['Проживаю', 'Краснодар'],
-                        ['Возраст', '39 лет'],
-                        ['Родилась', '9 февраля 1981'],
+                        ['Проживаю ', 'Краснодар'],
+                        ['Возраст ', '39 лет'],
+                        ['Родилась ', '9 февраля 1981'],
                       ]
                     each item in items
                       li.user__desc-item
@@ -104,6 +101,7 @@ html(lang="ru")
         section.form(id='form')
           .container.form__container
             #slider-form
+            
       footer.footer
         .footer__content
           .footer__user
@@ -115,11 +113,8 @@ html(lang="ru")
           .footer__reiht
             .footer__nav
               nav.nav-footer
-                - var menu = [['#hero', 'Главная'], ['#about', "Обо мне"], ['#values', "Навыки"], ['#works', "Работы"], ['#reviews',"Отзывы"], ['#form', "Связаться"]] 
-                  ul.nav__list-footer
-                    each item in menu
-                      li.nav__item
-                        a(href=item[0]).nav__link #{item[1]}
+               include ./templates/nav.pug
+
             .footer__comment
               .footer__comment-left
                 p.footer__message Этот сайт я сделалf в рамках обучения в Школе онлайн образования Loftschool
