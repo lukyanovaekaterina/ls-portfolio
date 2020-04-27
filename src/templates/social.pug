@@ -1,0 +1,7 @@
+
+- var icons = [["https://www.instagram.com", 'insta'], ["https://vk.com", 'vk'], ['https://github.com/lukyanovaekaterina', 'github']]
+  ul.socials
+    each item, index in icons
+      li.socials__item(class=`${index === 1 ? 'active' : ''}`)
+        a(href=item[0]).socials__link
+          +icon(`${item[1]}`, 'socials__icon')

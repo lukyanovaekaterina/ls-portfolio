@@ -8,7 +8,19 @@ new Vue({
   },
  methods: {
    changeCaption: function() {
-     console.log("click")
+      this.active = !this.active;
+      $("#hero__nav").toggleClass("hero__nav--active");
+    }
+  }
+});
+
+new Vue({
+  el: "#MenuNav",
+  data: {
+    active: true
+  },
+  methods: {
+    changeCaption2: function() {
       this.active = !this.active;
       $("#hero__nav").toggleClass("hero__nav--active");
     }
