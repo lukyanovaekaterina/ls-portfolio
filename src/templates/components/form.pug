@@ -1,0 +1,22 @@
+script(type="text/x-template")#form-container
+  div
+    .form__content
+      p.form__title Связаться со мной
+      form.form__elem(action="", id="myForm")
+        .form__col
+          .form__row
+            label.form__label(for="name")
+              h6.form__label-title Введите ваше имя
+              div {{validation.firstError('name')}}
+              input.form__input(type="text" name="name" id="name" v-model="name")
+            label.form__label(for="email")
+              h6.form__label-title Введите ваш email
+              div {{validation.firstError('email')}}
+              input.form__input(type="text" name="email" id="email" v-model="email")
+          .form__row
+            label.form__label(for="comment")
+              h6.form__label-title Сообщение к письму
+              div {{validation.firstError('comment')}}
+              textarea.form__input.form__textarea(name="comment", id="comment" v-model="comment")
+          .form__row-btn
+            button.btn__form(type="submit") Отправить

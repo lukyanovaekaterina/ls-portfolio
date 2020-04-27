@@ -1,0 +1,6 @@
+nav.nav
+  - var menu = [['#hero', 'Главная'], ['#about', "Обо мне"], ['#values', "Навыки"], ['#works', "Работы"], ['#reviews',"Отзывы"], ['#form', "Связаться"]]
+    ul.nav__list#MenuNav    
+      each item in menu
+        li.nav__item
+          a(href=item[0] class="nav__item-link").nav__link(@click="changeCaption2") #{item[1]}

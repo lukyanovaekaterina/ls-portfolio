@@ -11,165 +11,110 @@ html(lang="ru")
     .wrapper
       .welcome-section
         .parallax
-          .parallax__layer(data-speed="0.1").parallax__layer-sky
+          .parallax__layer.parallax__layer-sky
             img(src=require("images/bg/1.jpg")).parallax__image
-          .parallax__layer(data-speed="0.13").parallax__layer-mountains
+          .parallax__layer.parallax__layer-mountains
             img(src=require("images/bg/2.png")).parallax__image
-          .parallax__layer(data-speed="0.16").parallax__layer-locomotive
+          .parallax__layer.parallax__layer-locomotive
             img(src=require("images/bg/3.png")).parallax__image
-          .parallax__layer(data-speed="0.21").parallax__layer-grass
+          .parallax__layer.parallax__layer-grass
             img(src=require("images/bg/4.png")).parallax__image
-          .parallax__layer(data-speed="0.25").parallax__layer-fon
+          .parallax__layer.parallax__layer-fon
             img(src=require("images/bg/5.png")).parallax__image
-          .parallax__layer(data-speed="0.28").parallax__layer-fon2
-            img(src=require("images/bg/5.png")).parallax__image
-        section.hero
+          .parallax__layer.parallax__layer-fon2
+            img(src=require("images/bg/5.png")).parallax__image  
+        section.hero#hero
           .container.hero__container
             header.header.hero__header
               .hero__logo
                 .logo ЛЕ
-              .hero__links 
-                nav.nav
-                  - var menu = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
-                  ul.nav__list
-                    each item in menu
-                      li.nav__item
-                        a(href="").nav__link #{item}
+              .hero__nav#hero__nav
+                include ./templates/nav.pug
+                  
               .hero__menu
-                - var icons = ['insta', 'vk', 'github']
-                ul.socials
-                  each item, index in icons
-                    li.socials__item(class=`${index === 1 ? 'active' : ''}`)
-                      a(href="").socials__link
-                        +icon(`${item}`, 'socials__icon')
+                include ./templates/social.pug
               .hero__gamburger
-                +icon('gamburger', 'gamburger__btn')
+                include ./templates/gamburger.pug
                   
             .hero__content
               .user-info
                 h1.user-info__desc Личный сайт <br/> вебразработчика
                 .user-info__username Лукьянова <br/> Екатерина
             .hero__btns
-              .scroll-down-btns Скролл
+              a(href="#about").scroll-down-btns
                 +icon('scroll', 'scroll__btn')
-        section.about
+                
+        section.about#about
           .container.about__container
             .about__content
               .about__left
                 .user
                   .avatar.user__avatar
                     +image("content/user.jpg", "avatar__pic")
-                  ul.user__desc
+                  table.user__desc
                     -
                       var items = [
-                        ['Проживаю', 'Краснодар'],
-                        ['Возраст', '39 лет'],
-                        ['Родилась', '9 февраля 1981'],
+                        ['Проживаю: ', 'Краснодар'],
+                        ['Возраст:', '39 лет'],
+                        ['Родилась:', '9 февраля 1981'],
                       ]
+                  
                     each item in items
-                      li.user__desc-item
-                        .user__key #{item[0]}
-                        .user__value #{item[1]}
+                      tr
+                        td.user__key #{item[0]}
+                        td.user__value #{item[1]}
               .about__right
                 h4.about__prolog Привет, меня зовут
                 h2.about__title Екатерина Лукьянова
                 .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                .about__ps Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
       
-      section.values
+      section.values#values
         .container.values__container
           .values__picture
               +image("bg/Hands.png", "values__pic")
           .values__content
             .values__title
-              h2.values__title-text Чем я могу быть вам полезен
+              h2.values__title-text Чем я могу быть вам полезна
               .values__desc
-                p.values__desc-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                p.values__desc-text Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
             .values__widget
 
               #skills-component
                                   
-      section.works
+      section.works#works
         .container.works__container
           h2.section-title Мои работы
           .works__content
             #slider-component
               
-      .feedback-section
+      .feedback-section#reviews
         section.reviews
           .container.reviews__container
-            .reviews__title-section
-              h2.reviews-title Что обо мне говорят
-              .reviews__buttons
-                button.reviews__button.reviews__button-prev(type="button")
-                  +icon('arrow-down', 'reviews__icon')
-                button.reviews__button.reviews__button-next(type="button")
-                  +icon('arrow-down', 'reviews__icon')
-            .reviews__content
-              .reviews
-                .reviews__wrap
-                  +icon('quote', 'quote__icon')
-                  .reviews__item
-                    p.reviews-message Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .reviews__user
-                      +image('content/Kovalchuk.jpg','reviews__user-foto')
-                      .reviews__user-info
-                        .reviews__username Ковальчук Дмитрий
-                        .reviews__about Основатель Loftschool
-                .reviews__wrap
-                  +icon('quote', 'quote__icon')
-                  .reviews__item
-                    p.reviews-message Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                    .reviews__user
-                      +image('content/Sabancev.jpg','reviews__user-foto')
-                      .reviews__user-info
-                        .reviews__username Владимир Сабанцев
-                        .reviews__about Преподаватель
-        section.form
+            #slider-reviews
+
+        section.form(id='form')
           .container.form__container
-            .form__content
-              p.form__title Связаться со мной
-              form.form__elem(action="", id="myForm")
-                .form__col
-                  .form__row
-                    label.form__label(for="name")
-                      h6.form__label-title Введите ваше имя
-                      input.form__input(type="text" name="name" id="name")
-                    label.form__label(for="email")
-                      h6.form__label-title Введите ваш email
-                      input.form__input(type="text" name="email" id="email")
-                  .form__row
-                    label.form__label(for="comment")
-                      h6.form__label-title Сообщение к письму
-                      textarea.form__input.form__textarea(name="comment", id="comment")
-                  .form__row-btn
-                    button.btn__form(type="submit") Отправить
+            #slider-form
+            
       footer.footer
         .footer__content
           .footer__user
             .footer__year
-              span.footer__year-text 2020
+              span.footer__year-text &copy2020
             .footer__user-info
               .footer__user-name Лукьянова Екатерина
               p.footer__user-desc Личный сайт вебразработчика
           .footer__reiht
             .footer__nav
               nav.nav-footer
-                - var menu = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
-                  ul.nav__list-footer
-                    each item in menu
-                      li.nav__item
-                        a(href="").nav__link #{item}
+               include ./templates/nav.pug
+
             .footer__comment
               .footer__comment-left
-                p.footer__message Этот сайт я сделалf в рамках обучения в Школе онлайн образования Loftschool
+                p.footer__message Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
                 .footer__menu
-                  - var icons = ['insta', 'vk', 'github']
-                  ul.socials
-                    each item, index in icons
-                      li.socials__item-footer(class=`${index === 1 ? 'active' : ''}`)
-                        a(href="").socials__link
-                          +icon(`${item}`, 'socials__icon-footer')
+                  include ./templates/social.pug
               .footer__comment-reiht
                 p.footer__comment-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                 .footer__comment-desc Martin Golding

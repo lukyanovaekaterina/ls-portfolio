@@ -5,20 +5,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  //*height: 100%;
-  //*width: 100%;
-
-  @include tablets(){
-  display: none;
-  }
-
-
+  min-height: 650px;
 
   &__layer{
     position: absolute;
     top: 0;
     left: 0;
-    //*width: 100%;
   }
 
   &__layer-sky{
@@ -28,47 +20,79 @@
     }
 
     &__layer-mountains{
-    top: 400px;
+    top: 350px;
+
+    @include desktop(){
+      top: 250px;
+    }
 
     @include tablets(){
-      top:200px;
+      top: 200px;
     }
+
+    @include phones(){
+      top: 80px;
     }
+  }
 
     &__layer-locomotive{
-        top: 530px;
+        top: 500px;
 
-        @include tablets(){
-          top: 260px;
+        @include desktop(){
+          top: 380px;
         }
+
+        @include tablets() {
+          top: 300px;
+        }   
+        @include phones(){
+          top: 140px;
+        }
+
+
     }
     &__layer-grass{
-        top: 940px;
+        top: 900px;
+
+        @include desktop(){
+          top: 650px;
+        }
+
         @include tablets(){
-          top: 470px;
+          top: 510px;
+        }
+        @include phones(){
+          top: 230px;
         }
     }
-    &__layer-fon2{
-      top: 1020px;
-      @include tablets(){
-        top: 500px;
-      }
+  
+    &__layer-fon{
+      top: 980px;
 
+      @include desktop(){
+        top: 700px;
+      }
+      @include tablets(){
+        top: 560px;
+      }
+      @include phones(){
+        top: 250px;
+      }
     }
 
-    &__layer-fon{
-      top: 1020px;
+    &__layer-fon2{
+      top: 1040px;
+    }
 
-      @include tablets(){
-        top: 500px;
-      }
-
-
+    @include phones(){
+      top: 290px;
     }
   }
 
 .pararllax__image{
   position: absolute;
-  max-width: unset;
+ max-width: unset;
   max-height: unset;
+
+
 }

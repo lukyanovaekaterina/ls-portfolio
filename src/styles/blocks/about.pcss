@@ -1,11 +1,11 @@
 .about{
-  height: 90vh;
+height: 90vh;
 display: flex;
 flex-direction: row;
 position: relative;
 
 @include phones() {
-  height: 100vh;
+  height: 130vh;
 }
 
 
@@ -23,7 +23,6 @@ position: relative;
 }
 
 &__left{
-width: 20%;
 margin-right: 130px;
 
 @include phones(){
@@ -41,6 +40,11 @@ margin-right: 130px;
   }
 
 }
+
+&__prolog{
+  margin-bottom: 10px;
+}
+
 &__title{
   font-size: 36px;
   font-weight: bold;

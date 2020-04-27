@@ -31,7 +31,7 @@ const info = {
   props: ["currentWork"],
   computed: {
     tagsArray() {
-      return this.currentWork.skills.split(', ');
+      return this.currentWork.skills.split(',');
     }
   }
 };
@@ -59,7 +59,6 @@ new Vue({
       return data.map(item => {
         const requiredPic = require(`../images/content/${item.photo}`);
         item.photo = requiredPic;
-
         return item;
     });
   },

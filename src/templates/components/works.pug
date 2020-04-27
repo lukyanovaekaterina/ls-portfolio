@@ -34,8 +34,8 @@ script(type="text/x-template")#slider-thumbs
 
 script(type="text/x-template")#slider-btns
   .works-slider__button
-          button(@click.prevent="$emit('slide', 'next')").slider-buttons__item.slider-buttons__item--slide--next >
-          button(@click.prevent="$emit('slide', 'prev')").slider-buttons__item.slider-buttons__item--slide--prev <
+    button(@click.prevent="$emit('slide', 'next')").slider-button__item.slider-buttons__item--slide--next >
+    button(@click.prevent="$emit('slide', 'prev')").slider-button__item.slider-buttons__item--slide--prev <
 
 script(type="text/x-template")#slider-info
   .works-slider__data

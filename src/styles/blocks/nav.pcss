@@ -1,9 +1,10 @@
 .nav{
+
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+  }
   
-&__list {
-  display: flex;
-  align-items: center;
-}
 
 &__item {
   margin-right: 52px;
@@ -16,16 +17,6 @@
 &__link{
   text-decoration:none;
   color: #fff;
-
 }
 
-@include tablets() {
-  display: none;
-}
-
-}
-
-.nav__list-footer{
-  display: flex;
-  flex-wrap: wrap;
 }
